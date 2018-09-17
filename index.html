@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Everyday Chinatown</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Bevan|Droid+Serif" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Cormorant:300i,400i,700i" rel="stylesheet">
+</head>
+<body>
+  <div class="main">
+    <div class="img-wrap">
+      <img src="#" alt="">
+    </div>
+
+    <div class="buttons">
+      <div class="button">one</div>
+      <div class="button">two</div>
+      <div class="button">three</div>
+    </div>
+
+  </div>
+
+  <!--  jQuery from web-->  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <!--   jQuery local-->  
+     <!-- <script src="js/jquery-3.2.0.min.js"></script>   -->
+  <!-- My Script -->
+    <script src="js/script.js" defer></script> 
+</body>
+</html>
+
+<style>
+  * {
+    /*border: 1px solid red;*/
+    padding: 0;
+    margin: 0;
+  }
+  .img-wrap {
+    background: purple;
+    height: 50px;
+  }
+  
+  .main {
+    width: 90vw;
+    margin: 0 auto;
+  }
+  
+  .buttons {
+    background: yellow;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 3fr 3fr 3fr;
+    grid-column-gap: 10%;
+    grid-column-end: 10%;
+
+    /*display: flex;*/
+  }
+
+  .button {
+    background: blue;
+    border: 1px solid red;
+    /*display: inline-block;*/
+    /*width: 33%;*/
+  }
+
+
+</style>
