@@ -1,13 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
   <title>Everyday Chinatown</title>
   <link rel="stylesheet" href="css/styles.css">
   <link href="https://fonts.googleapis.com/css?family=Bevan|Droid+Serif" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Cormorant:300i,400i,700i" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Lato|Oswald" rel="stylesheet">
+  <style>
+  * {box-sizing: border-box}
+  body {font-family: georgia, serif; margin:0}
+  .mySlides {display: none}
+  img {vertical-align: middle;}
+
+  /* Slideshow container */
+  .slideshow-container {
+    width: 95vw;
+    position: relative;
+    margin: auto;
+  }
+
+  /* Next & previous buttons */
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: red;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+  }
+
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+  }
+
+  /* Caption text */
+  .text {
+    color: black;
+    font-size: 15px;
+    padding: 8px 12px;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* The dots/bullets/indicators */
+  .dot {
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    margin: 0 6px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+
+  .active, .dot:hover {
+    background-color: #717171;
+  }
+
+  /* On smaller screens, decrease text size */
+  @media only screen and (max-width: 300px) {
+    .prev, .next,.text {font-size: 11px}
+  }
+  </style>
 </head>
+
 <!-- Attempt at making it full screen lock
  --><!-- <body style="height: 100%; width: 100%; margin: 0;">
  -->  
@@ -18,34 +88,79 @@
   	<span class="subTitle">A community-based art project bringing stories from Chinatown residents to local storefronts. Through a series of workshops with local community groups, Think!Chinatown recorded stories related to everyday objects found in Chinatown. Our hope is that these stories open a tiny window into parts of this neighborhood its communities that might be interesting or new — whether you are just visiting, or your family as been here for years.</span>
   </div>
  -->
-  <img src="/images/headerOpart2.png" alt="NYT header" style="width: 100vw; display: block;">
-  <div class="main">
-    <div class="img-wrap">
-        <div class="oName">Plaid nylon bag</div>
-        <img src="/images/bagWide.jpg" alt="image of a nylon bag" style="width: 50vw; display: block; margin: 0 auto;">
-     <!--  	<img src="/images/bagSite.JPG" alt="image of a nylon bag" style="width: 50vh; display: block; margin: 0 auto;"> -->
-    </div>
+  <img src="/images/headerOpart3e.png" alt="NYT header" style="width: 100vw;">
+  <hr style="width:73vw; margin: 0 auto;">
+  <div class="introText" style="padding-top: 6vh; padding-bottom: 4vh;">In TK year, the population of foreign born residents in Chinatown was TK number. Now, TK years later, as new businesses, real estate developments, and wealthy new combers shift the cultural balance of the neighborhood — it remains a cultural hub for Chinese and Chinese Americans within the five boroughs and beyond. Within the homes and businesses of this neighborhood, you will still find objects that tell stories about the experience of immigration and adaptation in one of Manhattan’s last, vibrant immigrant communities.<br><br>EVERYDAY CHINATOWN is a community-based art project that brings objects and stories from Chinatown’s homes into storefronts around the neighborhood.  The hope is that these stories open a tiny window into parts of Chinatown and its communities that might be interesting or new — whether someone is just visiting, or their family as been in the neighborhood for decades.<br><br>Objects and stories were chosen through a series of workshops held with local community groups. Objects were displayed in street-facing windows of small businesses all over Chinatown.
+  </div>
+  <hr style="width:41vw; margin: 0 auto;">
+   
+  <div class="slideshow-container">
 
-    <div class="buttons">
-      <div class="button" id="bCanto">粵語</div>
-      <div class="button" id="bEng">ENGLISH</div>
-      <div class="button" id="bMando">国语</div>
-    </div>
+  <div class="mySlides">
+    <div class="text">Caption One</div>
+    <img src="/images/bagWide.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="text">Caption Two</div>
+    <img src="/images/baguaWide.jpg" style="width:100%">
+  </div>
+
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+  </div>
+  <br>
+
+  <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span> 
+    <span class="dot" onclick="currentSlide(2)"></span> 
+  </div>
+
+      <div class="buttons">
+        <div class="button" id="bCanto">粵語</div>
+        <div class="button" id="bEng">ENGLISH</div>
+        <div class="button" id="bMando">国语</div>
+      </div>
  	
  	<!-- Interactions Click Listener try 1 - audio player -->
     <div style="display:none;" id="audioDiv"> 
         <audio id="player" controls="controls"><source id="audioFill" src=""/></audio>
     </div>
   
-  </div>
-
-
-
   <!--  jQuery from web-->  
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <!--   jQuery local-->  
      <!-- <script src="js/jquery-3.2.0.min.js"></script>   -->
   <!-- My Script -->
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+          showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+          showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+          var i;
+          var slides = document.getElementsByClassName("mySlides");
+          var dots = document.getElementsByClassName("dot");
+          if (n > slides.length) {slideIndex = 1}    
+          if (n < 1) {slideIndex = slides.length}
+          for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";  
+          }
+          for (i = 0; i < dots.length; i++) {
+              dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex-1].style.display = "block";  
+          dots[slideIndex-1].className += " active";
+        }
+    </script>
     <script src="js/script.js" defer></script> 
 </body>
 </html>
@@ -59,15 +174,15 @@
 
   .img-wrap {
     /*background: black;*/
-    padding: 10vh 0;
+    padding-top: 6vh;
+    padding-bottom: 9vh;
     /*margin: 6vh;*/
   }
   
-  .main {
-  	/*background: blue;*/
+/*  .main {
     width: 90vw;
     margin: 0 auto;
-  }
+  }*/
   
   .buttons {
     /*background: yellow;*/
@@ -125,14 +240,51 @@
     margin: 0 auto;
   }
 
+  .introText{
+    font-family: georgia,"times new roman",times,serif;
+    font-size: 15px;
+    line-height: 1.5;
+    width: 40vw;
+    color: #333;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  hr{
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
   .oName {
     font-family: georgia,"times new roman",times,serif;
-    font-size: 16px;
+    font-size: 17px;
     line-height: 1.5;
+    color: #333;
     display: block;
     margin: 0 auto;
     text-align: center;
-    margin-bottom: 4vh;
+    padding-top: 10vh
+  }
+
+  .prev, .next {
+    cursor: pointer;
+    /*position: absolute;*/
+    top: 50%;
+    /*width: auto;*/
+    padding: 16px;
+    margin-top: -22px;
+  /*  color: red;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;*/
+    border-radius: 0 3px 3px 0;
+  }
+
+  .next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
   }
 
 </style>
