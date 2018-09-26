@@ -15,6 +15,7 @@
 
   /* Slideshow container */
   .slideshow-container {
+    padding-top: 10vh;
     width: 95vw;
     position: relative;
     margin: auto;
@@ -50,7 +51,8 @@
   .text {
     color: black;
     font-size: 15px;
-    padding: 8px 12px;
+    /*padding: 8px 12px;*/
+    padding-bottom: 4vh;
     width: 100%;
     text-align: center;
   }
@@ -96,13 +98,13 @@
    
   <div class="slideshow-container">
 
-  <div class="mySlides">
-    <div class="text">Caption One</div>
+  <div class="mySlides" id="bag">
+    <div class="text">Plaid Nylon Bag</div>
     <img src="/images/bagWide.jpg" style="width:100%">
   </div>
 
-  <div class="mySlides">
-    <div class="text">Caption Two</div>
+  <div class="mySlides" id="bagua">
+    <div class="text">Feng Shui Mirror</div>
     <img src="/images/baguaWide.jpg" style="width:100%">
   </div>
 
@@ -119,7 +121,7 @@
 
       <div class="buttons">
         <div class="button" id="bCanto">粵語</div>
-        <div class="button" id="bEng">ENGLISH</div>
+        <div class="button" id="bEng">FUCK</div>
         <div class="button" id="bMando">国语</div>
       </div>
  	
@@ -160,6 +162,14 @@
           slides[slideIndex-1].style.display = "block";  
           dots[slideIndex-1].className += " active";
         }
+
+        $('.button').on('click', function(e) {
+          console.log('Current Object:')
+          console.log(slideIndex)
+          console.log('SRC:')
+          console.log(SRC)
+        });
+
     </script>
     <script src="js/script.js" defer></script> 
 </body>

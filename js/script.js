@@ -1,30 +1,30 @@
 
-var slideIndex = 1;
-showSlides(slideIndex);
+// var slideIndex = 1;
+// showSlides(slideIndex);
 
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
+// function plusSlides(n) {
+//   showSlides(slideIndex += n);
+// }
 
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
+// function currentSlide(n) {
+//   showSlides(slideIndex = n);
+// }
 
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";  
-  }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " active";
-}
+// function showSlides(n) {
+//   var i;
+//   var slides = document.getElementsByClassName("mySlides");
+//   var dots = document.getElementsByClassName("dot");
+//   if (n > slides.length) {slideIndex = 1}    
+//   if (n < 1) {slideIndex = slides.length}
+//   for (i = 0; i < slides.length; i++) {
+//       slides[i].style.display = "none";  
+//   }
+//   for (i = 0; i < dots.length; i++) {
+//       dots[i].className = dots[i].className.replace(" active", "");
+//   }
+//   slides[slideIndex-1].style.display = "block";  
+//   dots[slideIndex-1].className += " active";
+// }
 
 
 // Set up some FAQ variables.
@@ -69,6 +69,14 @@ function showSlides(n) {
 //   }
 // }, {offset: '70%'});
 
+// Next slide get id - FAILED
+// $('.slideMove').on('click', function(e) {
+//     console.log('but also')
+// });
+
+// $('.prev').on('click', function(e) {
+//     console.log('but also')
+// });
 
 
 // Universal click listener for audio and quotes (not Vertical quotes)
@@ -78,11 +86,14 @@ $('.button').on('click', function(e) {
   // For testing on local server vvVVvvV
   var path = 'http://localhost:8000/audio/';
   // var path = 'https://erinreiss.github.io/everydayChinatown/audio/';
-  var SRC = path + ID + '.mp3';
+  var SRC = path + slideIndex + ID + '.mp3';
+  console.log('Current Object:')
+  console.log(slideIndex)
+  console.log('This:')
   console.log(this)
-  console.log('and')
+  console.log('SRC:')
   console.log(SRC)
-  console.log('but also')
+  console.log('player.src:')
   console.log(player.src)
   if (player.paused && (player.src === SRC)) {
     player.play();
