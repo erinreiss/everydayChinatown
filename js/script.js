@@ -89,12 +89,12 @@ $('.button').on('click', function(e) {
   var SRC = path + slideIndex + ID + '.mp3';
   console.log('Current Object:')
   console.log(slideIndex)
-  console.log('This:')
-  console.log(this)
+  // console.log('This:')
+  // console.log(this)
   console.log('SRC:')
   console.log(SRC)
-  console.log('player.src:')
-  console.log(player.src)
+  // console.log('player.src:')
+  // console.log(player.src)
   if (player.paused && (player.src === SRC)) {
     player.play();
   } else if (!player.paused && (player.src === SRC)) {
