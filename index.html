@@ -92,7 +92,7 @@
  -->
   <img src="/images/headerOpart3e.png" alt="NYT header" style="width: 100vw;">
   <hr style="width:73vw; margin: 0 auto;">
-  <div class="introText" style="padding-top: 6vh; padding-bottom: 4vh;">In TK year, the population of foreign born residents in Chinatown was TK number. Now, TK years later, as new businesses, real estate developments, and wealthy new combers shift the cultural balance of the neighborhood — it remains a cultural hub for Chinese and Chinese Americans within the five boroughs and beyond. Within the homes and businesses of this neighborhood, you will still find objects that tell stories about the experience of immigration and adaptation in one of Manhattan’s last, vibrant immigrant communities.<br><br>EVERYDAY CHINATOWN is a community-based art project that brings objects and stories from Chinatown’s homes into storefronts around the neighborhood.  The hope is that these stories open a tiny window into parts of Chinatown and its communities that might be interesting or new — whether someone is just visiting, or their family as been in the neighborhood for decades.<br><br>Objects and stories were chosen through a series of workshops held with local community groups. Objects were displayed in street-facing windows of small businesses all over Chinatown.
+  <div class="introText" style="padding-top: 6vh; padding-bottom: 4vh;">In TK year, the population of foreign-born residents in Chinatown was TK number. Now, TK years later new businesses, real estate developments, and wealthy newcomers are shifting the cultural balance of the neighborhood. Despite Chinatown's changes, it remains a cultural hub for Chinese and Chinese Americans within the five boroughs and beyond. Inside the homes and businesses of this neighborhood, you will still find objects that tell stories about the experience of immigration and adaptation in one of Manhattan’s last, vibrant immigrant communities. Hopefuly, these objects open a tiny window into parts of Chinatown and its communities that might be interesting or new — whether someone is just visiting, or their family as been in the neighborhood for decades.
   </div>
   <hr style="width:41vw; margin: 0 auto;">
    
@@ -100,12 +100,14 @@
 
   <div class="mySlides" id="bag">
     <div class="text">Plaid Nylon Bag</div>
-    <img src="/images/bagWide.jpg" style="width:100%">
+    <div class="imageBack">
+     <img src="/images/bagWide3.jpg" style="width:100%">
+    </div>
   </div>
 
   <div class="mySlides" id="bagua">
     <div class="text">Feng Shui Mirror</div>
-    <img src="/images/baguaWide.jpg" style="width:100%">
+    <img src="/images/baguaWide3.jpg" style="width:100%">
   </div>
 
   <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -119,11 +121,15 @@
     <span class="dot" onclick="currentSlide(2)"></span> 
   </div>
 
-      <div class="buttons">
+      <div class="buttons" style="padding-top: 4vh;">
         <div class="button" id="bCanto">粵語</div>
         <div class="button" id="bEng">ENGLISH</div>
         <div class="button" id="bMando">国语</div>
       </div>
+
+   <hr style="width:41vw; margin: 0 auto;">
+  <div class="outroText" style="padding-top: 6vh; padding-bottom: 25vh;">These objects and stories were collected through a series of workshops held with local community groups — organized by Aaron Reiss, while volunteering and working with Think!Chinatown, a local arts-based non-profit. At the end of the workshop series, the objects were displayed in street-facing windows of small businesses all over Chinatown, and passerbys could call in to hear the stories.
+  </div>
  	
  	<!-- Interactions Click Listener try 1 - audio player -->
     <div style="display:none;" id="audioDiv"> 
@@ -248,7 +254,7 @@
     margin: 0 auto;
   }
 
-  .introText{
+  .introText, .outroText{
     font-family: georgia,"times new roman",times,serif;
     font-size: 15px;
     line-height: 1.5;
