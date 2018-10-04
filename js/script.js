@@ -78,6 +78,27 @@
 //     console.log('but also')
 // });
 
+//Click listener for site language
+$('#lCanto').on('click', function(e) {
+    console.log(this.id);
+    $('#englishSite').css("display", "none");
+    $('#mandarinSite').css("display", "none");
+    $('#cantoneseSite').css("display", "block");
+});
+
+$('#lMando').on('click', function(e) {
+    console.log(this.id);
+    $('#englishSite').css("display", "none");
+    $('#mandarinSite').css("display", "block");
+    $('#cantoneseSite').css("display", "none");
+});
+
+$('#lEng').on('click', function(e) {
+    console.log(this.id);
+    $('#englishSite').css("display", "block");
+    $('#mandarinSite').css("display", "none");
+    $('#cantoneseSite').css("display", "none");
+});
 
 // Universal click listener for audio and quotes (not Vertical quotes)
 $('.button').on('click', function(e) {
@@ -107,6 +128,7 @@ $('.button').on('click', function(e) {
     player.play();
   }
   var qID = "#" + $(this).attr('id') + "_quote";
+  console.log('qID:')
   console.log(qID)
   $(qID).toggleClass("startOpacity0", 400);
 });
