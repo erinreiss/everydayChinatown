@@ -1,82 +1,25 @@
 
-// var slideIndex = 1;
-// showSlides(slideIndex);
+// Re-set audio after changing language
+$('.lButton').on('click', function(e) {
+    if (player.play) {
+      //volume animation seems to not be working
+      player.animate({volume: 0.0}, 1000);
+      player.pause();
+      player.currentTime = 0;
+      player.animate({volume: 1.0}, 0);
+    } 
+});
 
-// function plusSlides(n) {
-//   showSlides(slideIndex += n);
-// }
-
-// function currentSlide(n) {
-//   showSlides(slideIndex = n);
-// }
-
-// function showSlides(n) {
-//   var i;
-//   var slides = document.getElementsByClassName("mySlides");
-//   var dots = document.getElementsByClassName("dot");
-//   if (n > slides.length) {slideIndex = 1}    
-//   if (n < 1) {slideIndex = slides.length}
-//   for (i = 0; i < slides.length; i++) {
-//       slides[i].style.display = "none";  
-//   }
-//   for (i = 0; i < dots.length; i++) {
-//       dots[i].className = dots[i].className.replace(" active", "");
-//   }
-//   slides[slideIndex-1].style.display = "block";  
-//   dots[slideIndex-1].className += " active";
-// }
-
-
-// Set up some FAQ variables.
-// var faqsSections = $('.cd-faq-group');
-// var faqTrigger = $('.cd-faq-trigger');
-// var faqsContainer = $('.cd-faq-items');
-// var faqsCategoriesContainer = $('.cd-faq-categories');
-// var faqsCategories = faqsCategoriesContainer.find('a');
-// var closeFaqsContainer = $('.cd-close-panel');
-
-
-// Set up some variables. Do I need these???
-// var headshot = $(".headshot");
-// var headshotStatusQuo = $(".headshotStatusQuo");
-// var intro1_Top = $('#intro1').offset().top;
-// var intro2_Top = $('#intro2').offset().top;  
-// var intro2_Top_2 = $('#wrapperIntro2a').offset().top;  
-// var intro8_Top = $('#wrapperIntro8').offset().top;  
-
-//Sticky for TopNav 
-// var sticky_topNav = new Waypoint.Sticky({
-//   element: $('.topnav')[0]
-// })
-
-
-// Re-set audio and and clickability after scrolling away from intro1
-// $('#intro2').waypoint(function(direction) {
-//   if(direction == 'down'){
-//     console.log("Fading out and Resetting audio and photos on intro1b");
-//     if (player.play) {
-//       //is this volume animation even working???
-//       player.animate({volume: 0.0}, 1000);
-//       player.pause();
-//       player.currentTime = 0;
-//       player.animate({volume: 1.0}, 0);
-//     } 
-//     // $('#statusQuoPhotos').animate({"opacity": 0}, "slow");
-//     $('#statusQuoPhotos').css("pointer-events", "none");
-//   } else {
-//     // $('#statusQuoPhotos').animate({"opacity": 1}, "slow");
-//     $('#statusQuoPhotos').css('pointer-events', 'auto');  
-//   }
-// }, {offset: '70%'});
-
-// Next slide get id - FAILED
-// $('.slideMove').on('click', function(e) {
-//     console.log('but also')
-// });
-
-// $('.prev').on('click', function(e) {
-//     console.log('but also')
-// });
+// Re-set audio after changing slides
+$('.prev, .next').on('click', function(e) {
+    if (player.play) {
+      //volume animation seems to not be working
+      player.animate({volume: 0.0}, 1000);
+      player.pause();
+      player.currentTime = 0;
+      player.animate({volume: 1.0}, 0);
+    } 
+});
 
 //Click listener for site language
 $('#lCanto').on('click', function(e) {
@@ -100,7 +43,7 @@ $('#lEng').on('click', function(e) {
     $('#cantoneseSite1, #cantoneseSite2').css("display", "none");
 });
 
-// Universal click listener for audio and quotes (not Vertical quotes)
+// Universal click listener for audio
 $('.button').on('click', function(e) {
   var player = document.getElementById('player');
   var ID = $(this).attr('id');
@@ -133,6 +76,66 @@ $('.button').on('click', function(e) {
   // $(qID).toggleClass("startOpacity0", 400);
 });
 
+// OLD (potentially useful) CODE FROM PREVIOUS RELATED PROJECTS
+
+// Next slide get id - FAILED
+// $('.slideMove').on('click', function(e) {
+//     console.log('but also')
+// });
+
+// $('.prev').on('click', function(e) {
+//     console.log('but also')
+// });
+
+// var slideIndex = 1;
+// showSlides(slideIndex);
+
+// function plusSlides(n) {
+//   showSlides(slideIndex += n);
+// }
+
+// function currentSlide(n) {
+//   showSlides(slideIndex = n);
+// }
+
+// function showSlides(n) {
+//   var i;
+//   var slides = document.getElementsByClassName("mySlides");
+//   var dots = document.getElementsByClassName("dot");
+//   if (n > slides.length) {slideIndex = 1}    
+//   if (n < 1) {slideIndex = slides.length}
+//   for (i = 0; i < slides.length; i++) {
+//       slides[i].style.display = "none";  
+//   }
+//   for (i = 0; i < dots.length; i++) {
+//       dots[i].className = dots[i].className.replace(" active", "");
+//   }
+//   slides[slideIndex-1].style.display = "block";  
+//   dots[slideIndex-1].className += " active";
+// }
+
+// Set up some FAQ variables.
+// var faqsSections = $('.cd-faq-group');
+// var faqTrigger = $('.cd-faq-trigger');
+// var faqsContainer = $('.cd-faq-items');
+// var faqsCategoriesContainer = $('.cd-faq-categories');
+// var faqsCategories = faqsCategoriesContainer.find('a');
+// var closeFaqsContainer = $('.cd-close-panel');
+
+
+// Set up some variables. Do I need these???
+// var headshot = $(".headshot");
+// var headshotStatusQuo = $(".headshotStatusQuo");
+// var intro1_Top = $('#intro1').offset().top;
+// var intro2_Top = $('#intro2').offset().top;  
+// var intro2_Top_2 = $('#wrapperIntro2a').offset().top;  
+// var intro8_Top = $('#wrapperIntro8').offset().top;  
+
+//Sticky for TopNav 
+// var sticky_topNav = new Waypoint.Sticky({
+//   element: $('.topnav')[0]
+// })
+
 //Click listener for Interactions Headshots
 // $('#interactionsPhotos').on('click', 'img', function(e) {
 //   $('.headshotInteractions').click(function(){
@@ -142,7 +145,6 @@ $('.button').on('click', function(e) {
 //        $(this).animate({"opacity": 1});
 //     });
 // });
-
 
 // Cilck
 // $('#intro5a').waypoint(function (direction) {
