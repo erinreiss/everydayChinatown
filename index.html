@@ -90,12 +90,25 @@
   	<span class="subTitle">A community-based art project bringing stories from Chinatown residents to local storefronts. Through a series of workshops with local community groups, Think!Chinatown recorded stories related to everyday objects found in Chinatown. Our hope is that these stories open a tiny window into parts of this neighborhood its communities that might be interesting or new — whether you are just visiting, or your family as been here for years.</span>
   </div>
  -->
-  <img src="/images/headerOpart3e.png" alt="NYT header" style="width: 100vw;">
-    <div class="lButtons" style="padding-top: 4vh;">
-      <div class="lButton" id="lCanto">粵語</div>
-      <div class="lButton" id="lEng">ENGLISH</div>
-      <div class="lButton" id="lMando">国语</div>
-    </div>
+  <img id="englishSiteT" src="/images/headerOpart3eE.png" alt="NYT header" style="width: 100vw;">
+  <img id="cantoneseSiteT" src="/images/headerOpart3eC.png" alt="NYT header" style="display: none; width: 100vw;">
+  <img id="mandarinSiteT" src="/images/headerOpart3eM.png" alt="NYT header" style="display: none; width: 100vw;">
+   
+<!--   <div id="englishSiteT" class="title">OpArt: Things You Find In Chinatown, And Their Stories
+  </div>
+
+  <div id="cantoneseSiteT" class="title" style="display: none;">OpArt: 在唐人街會找到的東西，和他們的故事
+  </div>
+
+  <div id="mandarinSiteT" class="title" style="display: none;">OpArt: 在唐人街会找到的东西，和他们的故事
+  </div> -->
+
+  <div class="lButtons">
+    <div class="lButton" id="lCanto">粵語</div>
+    <div class="lButton" id="lEng">ENGLISH</div>
+    <div class="lButton" id="lMando">国语</div>
+  </div>
+  
   <hr style="width:73vw; margin: 0 auto;">
 
   <div id="englishSite1" class="introText" style="padding-top: 6vh; padding-bottom: 4vh;">In TK year, the population of foreign-born residents in Chinatown was TK number. Now, TK years later new businesses, real estate developments, and wealthy newcomers are shifting the cultural balance of the neighborhood. Despite Chinatown's changes, it remains a cultural hub for Chinese and Chinese Americans within the five boroughs and beyond. Inside the homes and businesses of this neighborhood, you will still find objects that tell stories about the experience of immigration and adaptation in one of Manhattan’s last, vibrant immigrant communities. Hopefuly, these objects open a tiny window into parts of Chinatown and its communities that might be interesting or new — whether someone is just visiting, or their family as been in the neighborhood for decades.
@@ -157,7 +170,15 @@
  	
  	<!-- Interactions Click Listener try 1 - audio player -->
     <div style="display:none;" id="audioDiv"> 
-        <audio id="player" controls="controls"><source id="audioFill" src=""/></audio>
+        <audio id="player" controls="controls">
+          <source id="audioFill" src=""/>
+          <track label="English" kind="subtitles" srclang="en" src="vtt/1listenEng.vtt" default>
+           Your browser does not support the audio element.
+        </audio>
+        <!-- <video width="320" height="240" controls> -->
+          <!-- <source id="audioFill" src="" type="audio/mpeg"> -->
+        <!-- Your browser does not support my busted-ass atempt to hack audio into a video element... 不好意思. -->
+        <!-- </video> -->
     </div>
   
   <!--  jQuery from web-->  
@@ -289,12 +310,6 @@
   	background: blue;
     margin: 6vh auto;
   }
-
-  .title {
-  	background: pink;
-  	display: inline;
-    width: 30vw;
-  }
   
   .subTitle {
   	background: yellow;
@@ -349,5 +364,17 @@
   right: 0;
   border-radius: 3px 0 0 3px;
   }
+
+.title{
+  font-weight: 200; 
+  font-style: normal;
+  line-height: 1.1; 
+  margin: 0 auto;
+  font-size: 60px; 
+  font-family: "nyt-cheltenham",georgia,"times new roman",times,serif;
+  text-align: center; 
+  padding-top: 6vh; 
+  padding-bottom: 4vh;
+}
 
 </style>

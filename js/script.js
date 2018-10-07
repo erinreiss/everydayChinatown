@@ -21,26 +21,37 @@ $('.prev, .next').on('click', function(e) {
     } 
 });
 
+// Re-set audio after clikcing dots
+$('.dot').on('click', function(e) {
+    if (player.play) {
+      //volume animation seems to not be working
+      player.animate({volume: 0.0}, 1000);
+      player.pause();
+      player.currentTime = 0;
+      player.animate({volume: 1.0}, 0);
+    } 
+});
+
 //Click listener for site language
 $('#lCanto').on('click', function(e) {
     console.log(this.id);
-    $('#englishSite1, #englishSite2').css("display", "none");
-    $('#mandarinSite1, #mandarinSite2').css("display", "none");
-    $('#cantoneseSite1, #cantoneseSite2').css("display", "block");
+    $('#englishSiteT, #englishSite1, #englishSite2').css("display", "none");
+    $('#mandarinSiteT, #mandarinSite1, #mandarinSite2').css("display", "none");
+    $('#cantoneseSiteT, #cantoneseSite1, #cantoneseSite2').css("display", "block");
 });
 
 $('#lMando').on('click', function(e) {
     console.log(this.id);
-    $('#englishSite1, #englishSite2').css("display", "none");
-    $('#mandarinSite1, #mandarinSite2').css("display", "block");
-    $('#cantoneseSite1, #cantoneseSite2').css("display", "none");
+    $('#englishSiteT, #englishSite1, #englishSite2').css("display", "none");
+    $('#mandarinSiteT, #mandarinSite1, #mandarinSite2').css("display", "block");
+    $('#cantoneseSiteT, #cantoneseSite1, #cantoneseSite2').css("display", "none");
 });
 
 $('#lEng').on('click', function(e) {
     console.log(this.id);
-    $('#englishSite1, #englishSite2').css("display", "block");
-    $('#mandarinSite1, #mandarinSite2').css("display", "none");
-    $('#cantoneseSite1, #cantoneseSite2').css("display", "none");
+    $('#englishSiteT, #englishSite1, #englishSite2').css("display", "block");
+    $('#mandarinSiteT, #mandarinSite1, #mandarinSite2').css("display", "none");
+    $('#cantoneseSiteT, #cantoneseSite1, #cantoneseSite2').css("display", "none");
 });
 
 // Universal click listener for audio
