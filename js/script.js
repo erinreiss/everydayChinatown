@@ -81,23 +81,23 @@
 //Click listener for site language
 $('#lCanto').on('click', function(e) {
     console.log(this.id);
-    $('#englishSite').css("display", "none");
-    $('#mandarinSite').css("display", "none");
-    $('#cantoneseSite').css("display", "block");
+    $('#englishSite1, #englishSite2').css("display", "none");
+    $('#mandarinSite1, #mandarinSite2').css("display", "none");
+    $('#cantoneseSite1, #cantoneseSite2').css("display", "block");
 });
 
 $('#lMando').on('click', function(e) {
     console.log(this.id);
-    $('#englishSite').css("display", "none");
-    $('#mandarinSite').css("display", "block");
-    $('#cantoneseSite').css("display", "none");
+    $('#englishSite1, #englishSite2').css("display", "none");
+    $('#mandarinSite1, #mandarinSite2').css("display", "block");
+    $('#cantoneseSite1, #cantoneseSite2').css("display", "none");
 });
 
 $('#lEng').on('click', function(e) {
     console.log(this.id);
-    $('#englishSite').css("display", "block");
-    $('#mandarinSite').css("display", "none");
-    $('#cantoneseSite').css("display", "none");
+    $('#englishSite1, #englishSite2').css("display", "block");
+    $('#mandarinSite1, #mandarinSite2').css("display", "none");
+    $('#cantoneseSite1, #cantoneseSite2').css("display", "none");
 });
 
 // Universal click listener for audio and quotes (not Vertical quotes)
@@ -127,21 +127,21 @@ $('.button').on('click', function(e) {
     player.load();
     player.play();
   }
-  var qID = "#" + $(this).attr('id') + "_quote";
-  console.log('qID:')
-  console.log(qID)
-  $(qID).toggleClass("startOpacity0", 400);
+  // var qID = "#" + $(this).attr('id') + "_quote";
+  // console.log('qID:')
+  // console.log(qID)
+  // $(qID).toggleClass("startOpacity0", 400);
 });
 
 //Click listener for Interactions Headshots
-$('#interactionsPhotos').on('click', 'img', function(e) {
-  $('.headshotInteractions').click(function(){
-       $('.headshotInteractions').not(this).each(function(){
-          $(this).animate({"opacity": .3});
-       });
-       $(this).animate({"opacity": 1});
-    });
-});
+// $('#interactionsPhotos').on('click', 'img', function(e) {
+//   $('.headshotInteractions').click(function(){
+//        $('.headshotInteractions').not(this).each(function(){
+//           $(this).animate({"opacity": .3});
+//        });
+//        $(this).animate({"opacity": 1});
+//     });
+// });
 
 
 // Cilck
