@@ -376,8 +376,8 @@ $('.button').on('click', function(e) {
   var player = document.getElementById('player');
   var ID = $(this).attr('id');
   // For testing on local server vvVVvvV
-  var path = 'http://localhost:8000/audio/';
-  // var path = 'https://erinreiss.github.io/everydayChinatown/audio/';
+  // var path = 'http://localhost:8000/audio/';
+  var path = 'https://erinreiss.github.io/everydayChinatown/audio/';
   var SRC = path + slideIndex + ID + '.mp3';
   console.log('Current Object:')
   console.log(slideIndex)
