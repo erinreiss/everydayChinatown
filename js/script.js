@@ -1,11 +1,51 @@
-
 // Universal click listener for audio
-$('.button').on('click', function(e) {
+// $('.button').on('click', function(e) {
+//   var player = document.getElementById('playerContainer');
+//   var ID = $(this).attr('id');
+//   // For testing on local server vvVVvvV
+//   var path = 'http://localhost:8000/audio/';
+//   var path = 'https://erinreiss.github.io/everydayChinatown/audio/';
+//   var SRC = path + slideIndex + ID + '.mp3';
+//   console.log('Current Object:')
+//   console.log(slideIndex)
+//   console.log('This:')
+//   console.log(this)
+//   console.log('SRC:')
+//   console.log(SRC)
+//   console.log('player.src:')
+//   console.log(player.src)
+//   if (player.paused && (player.src === SRC)) {
+//     player.play();
+//   } else if (!player.paused && (player.src === SRC)) {
+//     player.pause();
+//   } else {
+//     player.pause();
+//     player.currentTime = 0;
+//     player.src = SRC;
+//     player.load();
+//     player.play();
+//   }
+//   var qID = "#" + $(this).attr('id') + "_quote";
+//   console.log('qID:')
+//   console.log(qID)
+//   $(qID).toggleClass("startOpacity0", 400);
+// });
+
+//Trying to log that shit
+// $('#playerContainer').on('click', function(e) {
+//   console.log(cap.audio)
+// });
+
+// Universal click listener for audio, with circle player
+$('#playerContainer').on('click', function(e) {
+  // console.log(cap.audio)
+  // var player = document.getElementById('playerContainer');
   var player = document.getElementById('player');
-  var ID = $(this).attr('id');
+  var ID = $('.button').attr('id');
+  // var ID = $(this).attr('class');
   // For testing on local server vvVVvvV
-  // var path = 'http://localhost:8000/audio/';
-  var path = 'https://erinreiss.github.io/everydayChinatown/audio/';
+  var path = 'http://localhost:8000/audio/';
+  // var path = 'https://erinreiss.github.io/everydayChinatown/audio/';
   var SRC = path + slideIndex + ID + '.mp3';
   console.log('Current Object:')
   console.log(slideIndex)
@@ -26,10 +66,6 @@ $('.button').on('click', function(e) {
     player.load();
     player.play();
   }
-  // var qID = "#" + $(this).attr('id') + "_quote";
-  // console.log('qID:')
-  // console.log(qID)
-  // $(qID).toggleClass("startOpacity0", 400);
 });
 
 /**
@@ -328,7 +364,10 @@ CircleAudioPlayer.prototype = {
   },
   play: function () {
     this.audio.play();
-    console.log(this.audio);
+    // console.log('This Audio:');
+    // console.log(this.audio.src);
+    // console.log('SRC:')
+    // console.log(SRC)
   },
   pause: function () {
     this.audio.pause();
@@ -337,11 +376,16 @@ CircleAudioPlayer.prototype = {
 
 // now init one as an example
 var cap = new CircleAudioPlayer({
-  audio: '',
+  audio: "http://localhost:8000/audio/1listenEng.mp3",
   size: 120,
   borderWidth: 8
 });
 cap.appendTo(playerContainer);
+
+//Send the right audio URL to the new circle player
+$('#playerContainer').on('click', function(e) {
+  console.log(cap.audio)
+});
 
 
 // Re-set audio after changing language
